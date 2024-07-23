@@ -10,9 +10,9 @@ class Transaksi extends Model
         'kasir_id', 'total', 'tax', 'grand_total',
     ];
     public function transaksi(){
-        return $this->hasMany(Transaksi::class,'transaksi_id','id');
+        return $this->hasMany(Transaksi::class);
     }
     public function user(){
-        return $this->belongsTo(User::class,'kasir_id','id');
+        return $this->belongsTo(User::class);
     }
 }

@@ -10,6 +10,6 @@ class Menu extends Model
         'nama_menu', 'quantity', 'harga',
     ];
     public function menu(){
-        return $this->hasMany(Menu::class,'menu_id','id');
+        return $this->hasMany(Menu::class);
     }
 }

@@ -10,9 +10,9 @@ class Transaksimenu extends Model
         'menu_id', 'transaksi_id', 'quantity', 'price', 'total',
     ];
     public function menu(){
-        return $this->belongsTo(Menu::class,'menu_id','id');
+        return $this->belongsTo(Menu::class);
     }
     public function transaksi(){
-        return $this->belongsTo(Transaksi::class,'transaksi_id','id');
+        return $this->belongsTo(Transaksi::class);
     }
 }
