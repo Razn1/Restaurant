@@ -38,30 +38,30 @@ Route::get('/user/{id}/delete', [AdminController::class, 'destroy'])->middleware
 Route::get('/user/{id}/edit', [AdminController::class, 'show'])->middleware('Admin');
 Route::post('/user/{id}/update', [AdminController::class, 'update'])->middleware('Admin');
 
-Route::get('/kasir', [KasirController::class, 'index'])->middleware('Admin');
-Route::get('/kasir/tambah', [KasirController::class, 'create'])->middleware('Admin');
-Route::post('/kasir/save', [KasirController::class, 'store'])->middleware('Admin');
-Route::get('/kasir/{id}/delete', [KasirController::class, 'destroy'])->middleware('Admin');
-Route::get('/kasir/{id}/edit', [KasirController::class, 'show'])->middleware('Admin');
-Route::post('/kasir/{id}/update', [KasirController::class, 'update'])->middleware('Admin');
+Route::get('/kasir', [KasirController::class, 'index'])->middleware('auth');
+Route::get('/kasir/tambah', [KasirController::class, 'create'])->middleware('auth');
+Route::post('/kasir/save', [KasirController::class, 'store'])->middleware('auth');
+Route::get('/kasir/{id}/delete', [KasirController::class, 'destroy'])->middleware('auth');
+Route::get('/kasir/{id}/edit', [KasirController::class, 'show'])->middleware('auth');
+Route::post('/kasir/{id}/update', [KasirController::class, 'update'])->middleware('auth');
 
-Route::get('/transaksi', [TransaksiController::class, 'index']);
-Route::get('/transaksi/tambah', [TransaksiController::class, 'create']);
-Route::post('/transaksi/save', [TransaksiController::class, 'store']);
-Route::get('/transaksi/{id}/delete', [TransaksiController::class, 'destroy']);
-Route::get('/transaksi/{id}/edit', [TransaksiController::class, 'show']);
-Route::post('/transaksi/{id}/update', [TransaksiController::class, 'update']);
+Route::get('/transaksi', [TransaksiController::class, 'index'])->middleware('auth');
+Route::get('/transaksi/tambah', [TransaksiController::class, 'create'])->middleware('auth');
+Route::post('/transaksi/save', [TransaksiController::class, 'store'])->middleware('auth');
+Route::get('/transaksi/{id}/delete', [TransaksiController::class, 'destroy'])->middleware('auth');
+Route::get('/transaksi/{id}/edit', [TransaksiController::class, 'show'])->middleware('auth');
+Route::post('/transaksi/{id}/update', [TransaksiController::class, 'update'])->middleware('auth');
 
-Route::get('/tranmenu', [TransaksimenuController::class, 'index']);
-Route::get('/tranmenu/tambah', [TransaksimenuController::class, 'create']);
-Route::post('/tranmenu/save', [TransaksimenuController::class, 'store']);
-Route::get('/tranmenu/{id}/delete', [TransaksimenuController::class, 'destroy']);
-Route::get('/tranmenu/{id}/edit', [TransaksimenuController::class, 'show']);
-Route::post('/tranmenu/{id}/update', [TransaksimenuController::class, 'update']);
+Route::get('/tranmenu', [TransaksimenuController::class, 'index'])->middleware('auth');
+Route::get('/tranmenu/tambah', [TransaksimenuController::class, 'create'])->middleware('auth');
+Route::post('/tranmenu/save', [TransaksimenuController::class, 'store'])->middleware('auth');
+Route::get('/tranmenu/{id}/delete', [TransaksimenuController::class, 'destroy'])->middleware('auth');
+Route::get('/tranmenu/{id}/edit', [TransaksimenuController::class, 'show'])->middleware('auth');
+Route::post('/tranmenu/{id}/update', [TransaksimenuController::class, 'update'])->middleware('auth');
 
-Route::get('/menu', [MenuController::class, 'index']);
-Route::get('/menu/tambah', [MenuController::class, 'create']);
-Route::post('/menu/save', [MenuController::class, 'store']);
-Route::get('/menu/{id}/delete', [MenuController::class, 'destroy']);
-Route::get('/menu/{id}/edit', [MenuController::class, 'show']);
-Route::post('/menu/{id}/update', [MenuController::class, 'update']);
+Route::get('/menu', [MenuController::class, 'index'])->middleware('auth');
+Route::get('/menu/tambah', [MenuController::class, 'create'])->middleware('auth');
+Route::post('/menu/save', [MenuController::class, 'store'])->middleware('auth');
+Route::get('/menu/{id}/delete', [MenuController::class, 'destroy'])->middleware('auth');
+Route::get('/menu/{id}/edit', [MenuController::class, 'show'])->middleware('auth');
+Route::post('/menu/{id}/update', [MenuController::class, 'update'])->middleware('auth');

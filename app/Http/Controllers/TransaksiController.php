@@ -51,8 +51,8 @@ class TransaksiController extends Controller
         //     'password' => 'required|min:5|max:20',
         // ]);
 
-        $total = $request->id;
-        $trans = Transaksimenu::find($total);
+        $total = $request->total;
+        $trans = Transaksimenu::where('transaksi_id',$total)->first();
 
         $totall = $trans->total;
         $tax = $totall * 10 / 100;
