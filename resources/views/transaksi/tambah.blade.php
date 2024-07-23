@@ -19,7 +19,7 @@
                                         <input type="number" name="kasir_id" class="form-control"
                                             value="{{ Auth()->user()->id }}" required>
                                     </div> --}}
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="" class="form-label">Total</label>
                                         <input type="number" name="total" id=""
                                             class="form-control @error('quantity') is-invalid @enderror"
@@ -30,8 +30,8 @@
                                                 {{ $kessage }}
                                             </div>
                                         @enderror
-                                    </div>
-                                    <div class="form-group">
+                                    </div> --}}
+                                    {{-- <div class="form-group">
                                         <label for="" class="form-label">Tax</label>
                                         <input type="number" name="tax" id=""
                                             class="form-control @error('tax') is-invalid @enderror"
@@ -42,7 +42,7 @@
                                                 {{ $kessage }}
                                             </div>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                     <div class="form-group">
                                         <label for="" class="form-label">Grand Total</label>
                                         <input type="number" name="grand_total" id=""

@@ -22,17 +22,13 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="mb-3">
                                         <label for="" class="form-label">Transaksi ID</label>
-                                        <input type="text" name="transaksi_id" id=""
-                                            class="form-control @error('name') is-invalid @enderror"
-                                            placeholder="Masukan Transaksi id" value="{{ old('transaksi_id') }}"
-                                            aria-describedby="helpId" required>
-                                        @error('transaksi_id')
-                                            <div class="invalidate-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <select required class="form-select form-select-lg" name="transaksi_id" id="">
+                                            @foreach ($tran as $tr)
+                                                <option value="{{ $tr->id }}">{{ $tr->id }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="form-label">Quantity</label>

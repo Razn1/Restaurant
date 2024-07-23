@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaksimenu;
+use App\Transaksi;
 use App\Menu;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,7 +36,8 @@ class TransaksimenuController extends Controller
     {
         $menu = Menu::all();
         $tranm = Transaksimenu::all();
-        return view('tran_menu.tambah',compact('menu','tranm'));
+        $tran = Transaksi::all();
+        return view('tran_menu.tambah',compact('menu','tranm','tran'));
     }
 
     /**

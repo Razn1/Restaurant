@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaksi;
+use App\Transaksimenu;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,13 +50,18 @@ class TransaksiController extends Controller
         //     'username' => 'required|unique:users',
         //     'password' => 'required|min:5|max:20',
         // ]);
-        
+
+        $total = $request->id;
+        $trans = Transaksimenu::find($total);
+
+        $totall = $trans->total;
+        $tax = $totall * 10 / 100;
+
         Transaksi::create([
             'kasir_id' => Auth::user()->id,
-            'total' => $request->total,
-            'tax' => $request->tax,
+            'total' => $totall,
+            'tax' => $tax,
             'grand_total' => $request->grand_total,
-            $request->except(['_token']),
         ]);
         return redirect('/transaksi')->with('message', 'Data Telah Ditambahkan');
     }
